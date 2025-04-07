@@ -6,6 +6,7 @@ const nextConfig = {
     output: 'export',
     basePath: isProd ? '/time-tracker' : '',
     assetPrefix: isProd ? '/time-tracker/' : '',
+    trailingSlash: true,
 };
 
 export default nextConfig;
