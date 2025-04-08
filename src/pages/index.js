@@ -1,25 +1,16 @@
+import dynamic from 'next/dynamic';
 
-import { useState } from 'react';
+const ClientRouter = dynamic(() => import('./client.js'), {
+  ssr: false,
+});
 
-export default function Home() {
-  const [count, setCount] = useState(0);
-
+export default function RootLayout({ children }) {
   return (
-    <main>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-      <p>Count: {count}</p>
-    </main>
+    <html lang="en">
+      <body>
+        {children}
+        <ClientRouter />
+      </body>
+    </html>
   );
 }
-
-// import "./globals.css";
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="en">
-//       <body>
-//         {children}
-//       </body>
-//     </html>
-//   );
-// }

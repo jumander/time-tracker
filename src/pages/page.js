@@ -1,5 +1,5 @@
-'use client';
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 export default function MyButton()
 {
@@ -14,6 +14,7 @@ export default function MyButton()
     <div>
       <button onClick={handleClick}>React</button>
       <p>Button pressed {count} times</p>
+      <Link to='/about'>To about</Link>
     </div>
   )
 }
